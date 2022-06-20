@@ -12,7 +12,7 @@ HEADERS = {
 
 @api_view(['GET'])
 def main(request):
-    return HttpResponse("Python AI works awesome!", headers=HEADERS)
+    return HttpResponse("Python AI works on nginx!", headers=HEADERS)
 
 @api_view(['GET'])
 def describe_ids(request):

@@ -1,7 +1,6 @@
 import json
 
 from src.services.describer import Describer
-from src.services.drawer import Drawer
 from src.services.partitioner import Partitioner
 from src.services.getter import Getter
 from src.services.graph_handler import GraphHandler

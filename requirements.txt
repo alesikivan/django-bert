@@ -1,0 +1,18 @@
+###### Requirements without Version Specifiers ######
+
+networkx
+numpy
+pycombo
+pathlib
+sklearn
+matplotlib
+
+pandas
+nltk
+
+django
+djangorestframework
+django-tastypie
+django-cors-headers
+
+###### Requirements with Version Specifiers ######

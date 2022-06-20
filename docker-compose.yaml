@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+
+  python:
+    container_name: socos_python
+    build:
+      context: .
+      dockerfile: PythonDockerfile
+    restart: always
+    ports:
+      - "80:80"
+    tty: true
+    volumes:
+      - .:/var/www/html
+      

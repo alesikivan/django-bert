@@ -1,0 +1,17 @@
+#!/bin/sh
+
+FROM python:3.9
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+RUN apt-get update && \
+     apt-get install python3-pip -y
+RUN pip3 install --no-cache-dir --upgrade pip
+
+WORKDIR /var/www/html
+ADD . .
+
+RUN pip3 install -r /var/www/html/requirements.txt
+
+ENTRYPOINT python3 ./manage.py runserver 0.0.0.0:80

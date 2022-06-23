@@ -3,7 +3,7 @@ version: '2'
 services:
 
   python:
-    container_name: socos_python
+    container_name: django_bert
     build:
       context: .
       dockerfile: PythonDockerfile
@@ -13,4 +13,3 @@ services:
     tty: true
     volumes:
       - .:/var/www/html
-      

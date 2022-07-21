@@ -20,20 +20,17 @@ class MainHandler:
 		words = Describer.describeFocusIds(content, W, focus_ids, 1)
 		return words
 
-	# @staticmethod
-	# def get_data():
-	# 	graph_handler = GraphHandler(DEG_T)
-	# 	content = Getter.getContent()
-	#
-	# 	[W, W2, MC, partition] = graph_handler.make_hierarchy()
-	# 	[X, X2] = Formatter.original_format(MC, content)
-	#
-	# 	return X2.tolist()
-
 	@staticmethod
-	def get_data():
-		coordinates = Formatter.format()
-		return coordinates.tolist()
+	def get_content(params):
+		content = Getter.get_content(params)
+
+		return content
+
+	# @staticmethod
+	# def get_coordinates(params):
+	# 	coordinates = Getter.get_coordinates(params)
+	#
+	# 	return coordinates
 
 	@staticmethod
 	def get_ids_links(ids):

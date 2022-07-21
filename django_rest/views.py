@@ -1,8 +1,11 @@
 # views.py
 from django.http import HttpResponse
 from rest_framework.decorators import api_view
+import numpy as np
 import datetime
 import json
+
+
 
 from src.main_handler import MainHandler
 
@@ -17,8 +20,6 @@ def main(request):
 @api_view(['GET'])
 def describe_ids(request):
     ids = request.query_params.getlist('ids[]')
-
-    # return HttpResponse(json.dumps(ids[0]))
 
     description = MainHandler.get_ids_description([int(i) for i in ids])
     return HttpResponse(json.dumps(description), headers=HEADERS)
@@ -41,6 +42,12 @@ def get_short_descriptions(request):
 
 @api_view(['GET'])
 def get_data(request):
-    data = MainHandler.get_data()
+    data = MainHandler.get_content(request.query_params)
 
-    return HttpResponse(json.dumps(data), headers=HEADERS)
+    return HttpResponse(json.dumps({ 'borders': data }), headers=HEADERS)
+
+@api_view(['GET'])
+def get_content(request):
+    content = MainHandler.get_content(request.query_params)
+
+    return HttpResponse(json.dumps(content), headers=HEADERS)

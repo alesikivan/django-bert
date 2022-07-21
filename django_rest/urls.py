@@ -37,4 +37,5 @@ urlpatterns = [
     path('get-short-descriptions/', views.get_short_descriptions),
     path('get-links/', views.get_links),
     path('get-data/', views.get_data),
+    path('get-content/', views.get_content),
 ]
